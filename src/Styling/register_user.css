@@ -1,0 +1,99 @@
+.register_main_div {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    min-height: 100vh; /* Full height for centering */
+}
+
+.register_user {
+    width: 500px; /* Fixed width */
+    margin: 20px; /* Margin for spacing */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #f9f9f9;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    display: flex; /* Use flexbox for centering */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center inputs */
+}
+
+.register_user input,
+#select_register {
+    width: 100%; /* Full width */
+    padding: 10px;
+    height: 40px; /* Consistent height */
+    border-radius: 9px;
+    margin: 10px 0; /* Uniform margin */
+    border: 1px solid silver;
+    outline: none;
+    position: relative;
+    left: 2px;
+    bottom: 100px;
+}
+
+#regist_b_u{
+    position: relative;
+    bottom: 120px;
+}
+
+#span_password{
+    color: red;
+}
+.register_user input:focus,
+#select_register:focus {
+    border: 3px solid lightgreen;
+}
+
+#button_register {
+    width: 100%; /* Full width for button */
+    height: 40px;
+    background-color: lightgreen;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    border-radius: 9px;
+    margin-top: 10px; /* Added margin for spacing */
+    position: relative;
+    bottom: 60px;
+}
+
+#button_register:hover {
+    background-color: green;
+}
+
+#h_register {
+    text-align: center;
+    position: relative;
+    bottom: 100px;
+    padding: 10px 0; /* Padding for better spacing */
+}
+
+#own_account {
+    text-align: center; /* Centered for better alignment */
+    font-weight: bold;
+    margin-top: 10px; /* Added margin for spacing */
+    position: relative;
+    bottom: 30px;
+}
+
+#login_register_style {
+    color: purple;
+}
+
+#logo_ed {
+    width: 200px; /* Adjusted logo size */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 auto; /* Center the logo */
+    position: relative;
+    bottom: 50px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .register_user {
+        width: 90%; /* Adjust width on smaller screens */
+        margin: 10px; /* Reduce margin for smaller screens */
+    }
+}

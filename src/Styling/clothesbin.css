@@ -1,0 +1,119 @@
+.box{
+  
+    width: 50px;
+    height: 100px;
+    background-color: silver;
+    border: solid;
+    margin-left: 3px;
+    position: relative;
+    top: 30px;
+    
+}
+
+#box_container{
+    display: flex;
+    display: row;
+    width: auto;
+    height: auto;
+    
+    
+    
+
+}
+
+
+.clothes-bin-container {
+    padding: 20px;
+    height: 250px;
+    margin: auto;
+    text-align: center;
+    width: auto;
+   
+  }
+
+
+  .clothes-bin-container-1{
+    padding: 20px;
+    height: 250px;
+    margin: auto;
+    text-align: center;
+    width: 200px;
+   
+  }
+  
+  
+ 
+  .clothes-list {
+    list-style-type: none;
+    padding: 0;
+    width: auto;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+
+  }
+
+  .products_edit{
+    width: 1200px;
+    height: 400px;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .clothes-item {
+    position: relative;
+    padding: 7px;
+    margin-left: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    width: 800px;
+    height: 200px;
+  }
+
+
+  .pagination-controls {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+
+  .pagination-controls button {
+    background-color: lightgreen; 
+    border: 1px solid lightgreen; 
+    color: black;
+    padding: 10px 15px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 16px;
+  }
+
+  .pagination-controls button:hover {
+    background-color: #0056b3; 
+    border-color: #0056b3; 
+    transform: scale(1.05); 
+  }
+  
+  .pagination-controls button:active {
+    background-color: #00408d; 
+    border-color: #00408d; 
+    transform: scale(0.95); 
+  }
+  
+
+  .pagination-controls button:disabled {
+    background-color: #cccccc; 
+    border-color: #cccccc; 
+    cursor: not-allowed;
+  }
+  
+  .pagination-controls button.current-page {
+    background-color: #0056b3; 
+    color: white;
+    font-weight: bold;
+  }
+  

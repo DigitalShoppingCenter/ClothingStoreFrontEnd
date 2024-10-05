@@ -1,0 +1,207 @@
+.body .div_madh{
+    background-color: black;
+    position: relative;
+    bottom: 40px;
+    width: 1200px;
+    height: 700px;
+}
+
+.kategorite button{
+
+   display: flex;
+   flex-direction: column;
+   width: 200px;
+   height: 35px;
+   padding: 7px;
+   align-items: center;
+   font-weight: bold;
+   
+  
+}
+
+.kategorite{
+
+    background-color: bisque;
+    width: 190px;
+
+}
+
+.div_madh{
+
+    background-color: black;
+    position: relative;
+    bottom: 40px;
+    width: 1200px;
+    height: 900px;
+    
+    
+
+}
+
+.h5{
+
+background-color: red;
+width: 200px;
+text-align: center;
+position: relative;
+top: 22px;
+
+}
+
+.produktet_kafeteria button{
+
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 35px;
+    padding: 7px;
+    align-items: center;
+    font-weight: bold;
+   
+
+}
+
+.produktet_kafeteria{
+
+position: relative;
+bottom: 365px;
+left: 220px;
+
+}
+
+.produktet{
+
+background-color: red;
+position: relative;
+bottom: 343px;
+left: 220px;
+width: 600px;
+text-align: center;
+}
+
+.produktet_kafeteria2 button{
+
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 35px;
+    padding: 7px;
+    align-items: center;
+    font-weight: bold;
+    position: relative;
+    bottom: 715px;
+    left: 420px;
+
+}
+
+
+
+.produktet_kafeteria3 button{
+
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 35px;
+    padding: 7px;
+    align-items: center;
+    font-weight: bold;
+    position: relative;
+    bottom: 1065px;
+    left: 620px;
+
+}
+
+
+.opsione{
+
+    background-color: red;
+    width: 600px;
+    text-align: center;
+    position: relative;
+    bottom: 1070px;
+    left: 220px;
+
+}
+
+.opsionet_butonat button{
+
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 35px;
+    padding: 7px;
+    align-items: center;
+    font-weight: bold;
+    position: relative;
+    bottom: 1092px;
+    left: 220px;
+    
+}
+
+#button1{
+
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    height: 35px;
+    padding: 7px;
+    align-items: center;
+    font-weight: bold;
+    position: relative;
+    bottom: 1092px;
+    left: 220px;
+    
+}
+
+#button2{
+
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    height: 35px;
+    padding: 7px;
+    align-items: center;
+    font-weight: bold;
+    position: relative;
+    bottom: 1127px;
+    left: 370px;
+}
+
+
+.opsionet_butonat2 button{
+ 
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 35px;
+    padding: 7px;
+    align-items: center;
+    font-weight: bold;
+    position: relative;
+    bottom: 1232px;
+    left: 520px;
+
+}
+.tavolinat button{
+    position: relative;
+    bottom: 1256px;
+    margin: 3px;
+    padding: 15px;
+    width: 70px;
+    height: 60px;
+    background-color: green;
+    left: 20px;
+    cursor: pointer;
+}
+.tavolinat button:hover{
+    background-color: lightseagreen;
+}
+.tavolinat_h5{
+    position: relative;
+    bottom: 1240px;
+    color: yellow;
+    background-color: red;
+    width: 908px;
+    left: 23px;
+    text-align: center;
+}

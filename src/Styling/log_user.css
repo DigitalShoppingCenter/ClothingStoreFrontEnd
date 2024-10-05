@@ -1,0 +1,116 @@
+.log_main_div {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    min-height: 100vh; /* Full height for centering */
+    
+}
+
+.log_user {
+    width: 350px; /* Fixed width */
+    height: 430px;
+    padding: 30px;
+    border: 1px solid black; /* Adjusted border */
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items */
+}
+
+#head_log{
+    position: relative;
+    top: -110px;
+}
+
+#logo_login{
+    width: 200px; 
+    height: auto; 
+    margin: 0 auto; 
+    position: relative;
+    bottom: 70px;
+    left: 7px;
+}
+
+.log_user input {
+    width: 100%;
+    padding: 10px; 
+    border-radius: 9px;
+    margin: 10px 0; 
+    border: 1px solid silver;
+    outline: none;
+    position: relative;
+    left: 1px;
+    top: -100px;
+}
+
+.log_user input:focus {
+    border: 3px solid lightgreen;
+}
+
+#button_log {
+    width: 100%;
+    height: 100%;
+    margin-top: 10px; /* Margin for spacing */
+    background-color: lightgreen;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    border-radius: 9px;
+    position: relative;
+    bottom: 90px;
+}
+
+#button_log:hover {
+    background-color: darkgreen;
+}
+
+#forgot_pw {
+    color: purple;
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 13px;
+    margin: 10px 0; 
+    position: relative;
+    right: 135px;
+    top: -90px;
+}
+
+#head_log {
+    margin: 0; 
+    padding: 5px;
+    font-weight: bold;
+    text-align: center; 
+}
+
+.remember_me {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    margin-top: 10px; /* Margin for spacing */
+    position: relative;
+    left: 130px;
+    bottom: 138px;
+}
+
+.remember_me input {
+    width: 20px; /* Adjusted width */
+    height: 20px; /* Adjusted height */
+    margin-right: 10px; /* Space between checkbox and label */
+    position: relative;
+    top: -0.3px;
+}
+
+.remember_me p {
+    color: black;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 400px) {
+    .log_user {
+        width: 90%; /* Adjust width on smaller screens */
+        padding: 20px; /* Adjust padding for smaller screens */
+    }
+}
