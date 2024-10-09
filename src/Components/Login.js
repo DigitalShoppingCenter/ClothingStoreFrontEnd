@@ -18,17 +18,14 @@ function LoginComponent() {
     setSuccess(null);
 
     try {
-      const response = await fetch('https://hostname:portnumber/apiv1/controller/apiendpoint', {
-        method: 'POST',
+      const response = await fetch(`https://clothingstorewebappbackend.onrender.com/api/v1/UserProfile/LogIn/${username}`, {
+        method: 'GET',
         headers: {
           'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          username,
-          password,
-          rememberMe,    
-        }),
+        }
       });
+
+      console.log(response);
 
       if (!response.ok) {
         throw new Error('Network response failed');
@@ -36,7 +33,9 @@ function LoginComponent() {
 
       const result = await response.json();
       console.log('Server Response:', result);
+      sessionStorage.setItem('userData', result);
       setSuccess('Login successful!'); 
+      
     } catch (error) {
       console.error('Error:', error);
       setError(error.message);
@@ -46,7 +45,7 @@ function LoginComponent() {
 
     if(success!=null)
       {
-          window.location.href="http://localhost:3000";
+          window.location.href="http://localhost:3000/";
       }
 
   };

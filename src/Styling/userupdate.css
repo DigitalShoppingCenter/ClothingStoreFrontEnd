@@ -1,0 +1,103 @@
+/* Container for the form */
+.user_update_css {
+    width: 100%;
+    max-width: 500px; /* Limits form width on larger screens */
+    margin: 0 auto; /* Centers form horizontally */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the content inside the form */
+}
+
+
+.user_update_css input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid silver;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+
+.user_update_css input::placeholder {
+    color: #888;
+}
+
+
+.user_update_css input:focus {
+    border: 2px solid lightgreen;
+    outline: none;
+}
+
+
+.user_update_css button {
+    width: 100%;
+    padding: 12px;
+    background-color: lightgreen;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+
+.user_update_css button:hover {
+    background-color: darkgreen;
+}
+
+
+.user_update_css button:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+}
+
+
+.user_update_css p {
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+}
+
+
+.user_update_css p[style*="red"] {
+    color: red;
+}
+
+
+.user_update_css p[style*="green"] {
+    color: green;
+}
+
+
+@media (max-width: 768px) {
+    .user_update_css {
+        padding: 15px;
+    }
+
+    .user_update_css input,
+    .user_update_css button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .user_update_css {
+        padding: 10px;
+    }
+
+    .user_update_css input,
+    .user_update_css button {
+        font-size: 12px;
+        padding: 8px;
+    }
+}

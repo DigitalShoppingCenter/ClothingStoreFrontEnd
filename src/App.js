@@ -8,6 +8,7 @@ import Forgot_password from './Pages/Forgot_password';
 import ClothesBin from './Pages/ClothesBin';
 import Juli from './Pages/Juli';
 import Shops from './Pages/Shops'
+import UserUpdate from './Pages/UserUpdate';
 
 
 
@@ -30,6 +31,7 @@ export default function App() {
           <Route path="/clothesbin" element={<ClothesBin />} />
           <Route path="/juli" element={<Juli />} />
           <Route path="/shops" element={<Shops />} />
+          <Route path="/user_update" element={<UserUpdate />} />
          
          
 

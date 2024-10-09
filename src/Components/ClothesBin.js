@@ -68,7 +68,9 @@ function ClothesBin({ items }) {
 
     if(ITEMS_PER_PAGE===1)
     {
-        return(<div>
+        return(
+        
+        <div>
             <div className="clothes-bin-container-1">
               <ul className="clothes-list-1">
                 {currentItems.map((item, index) => (
