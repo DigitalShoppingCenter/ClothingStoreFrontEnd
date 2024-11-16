@@ -1,83 +1,76 @@
 /* Container for the form */
 .user_update_css {
-    width: 100%;
-    max-width: 500px; /* Limits form width on larger screens */
-    margin: 0 auto; /* Centers form horizontally */
+    max-width: 500px;
+    margin: 0 auto;
     padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     background-color: #f9f9f9;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centers the content inside the form */
+    align-items: center;
+    gap: 15px; /* Adds spacing between form elements */
 }
 
-
+/* Input fields */
 .user_update_css input {
     width: 100%;
     padding: 12px;
-    margin: 10px 0;
     border-radius: 5px;
-    border: 1px solid silver;
-    box-sizing: border-box;
-    font-size: 16px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    transition: border 0.3s ease;
 }
-
 
 .user_update_css input::placeholder {
     color: #888;
 }
-
 
 .user_update_css input:focus {
     border: 2px solid lightgreen;
     outline: none;
 }
 
-
+/* Button styling */
 .user_update_css button {
     width: 100%;
     padding: 12px;
     background-color: lightgreen;
     color: white;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: bold;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 10px;
     transition: background-color 0.3s ease;
 }
-
 
 .user_update_css button:hover {
     background-color: darkgreen;
 }
-
 
 .user_update_css button:disabled {
     background-color: gray;
     cursor: not-allowed;
 }
 
-
+/* Informational text styling */
 .user_update_css p {
     width: 100%;
     text-align: center;
-    font-size: 14px;
+    font-size: 0.9rem;
+    color: inherit;
 }
 
-
-.user_update_css p[style*="red"] {
+.user_update_css p.error {
     color: red;
 }
 
-
-.user_update_css p[style*="green"] {
+.user_update_css p.success {
     color: green;
 }
 
-
+/* Responsive Adjustments */
 @media (max-width: 768px) {
     .user_update_css {
         padding: 15px;
@@ -85,7 +78,7 @@
 
     .user_update_css input,
     .user_update_css button {
-        font-size: 14px;
+        font-size: 0.95rem;
         padding: 10px;
     }
 }
@@ -97,7 +90,28 @@
 
     .user_update_css input,
     .user_update_css button {
-        font-size: 12px;
+        font-size: 0.85rem;
         padding: 8px;
     }
+}
+
+/* Dark mode styles */
+body.dark-mode, .container.dark-mode, .page-content.dark-mode {
+  background-color: #282828;
+  color: #f0f0f0;
+}
+
+input.dark-mode, textarea.dark-mode, select.dark-mode {
+  background-color: #333;
+  color: #fff;
+  border-color: #777;
+}
+
+button.dark-mode, .button.dark-mode {
+  background-color: #444;
+  color: #fff;
+}
+
+.link.dark-mode, a.dark-mode {
+  color: #4a90e2;
 }

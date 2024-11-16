@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import log_user from '../Styling/log_user.css'
-import logo from '../Assets/logo.png'
+import '../Styling/log_user.css'; // Make sure the path to the CSS file is correct
+import login from '../Mock_DataBase/Log_function';
 
 function LoginComponent() {
   const [username, setUsername] = useState('');
@@ -9,52 +9,29 @@ function LoginComponent() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
-  console.log(username, password, rememberMe);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     setLoading(true);
     setError(null);
     setSuccess(null);
+    const { user, token } = await login(username, password);
+    localStorage.setItem('token', token);
 
-    try {
-      const response = await fetch(`https://clothingstorewebappbackend.onrender.com/api/v1/UserProfile/LogIn/${username}`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-        }
-      });
-
-      console.log(response);
-
-      if (!response.ok) {
-        throw new Error('Network response failed');
-      }
-
-      const result = await response.json();
-      console.log('Server Response:', result);
-      sessionStorage.setItem('userData', result);
-      setSuccess('Login successful!'); 
-      
-    } catch (error) {
-      console.error('Error:', error);
-      setError(error.message);
-    } finally {
-      setLoading(false);
+    if (token != null) {
+      window.location.href = "http://localhost:3000/";
+    } else {
+      window.location.reload(true);
     }
-
-    if(success!=null)
-      {
-          window.location.href="http://localhost:3000/";
-      }
-
   };
 
   return (
     <div className='log_main_div'>
       <form onSubmit={handleSubmit}>
         <div className="log_user">
-        <a href='http://localhost:3000'><img src={logo} id='logo_login'/></a>
+          <a href='http://localhost:3000'>
+            <img src={`${process.env.PUBLIC_URL}/Assets/logo.png`} id='logo_login' alt="Logo" />
+          </a>
           <p id='head_log'>Log in to see our fullest extent!</p>
           <input
             type="text"
@@ -63,13 +40,16 @@ function LoginComponent() {
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
+          <img src={`${process.env.PUBLIC_URL}/Assets/usericon.png`} id='user_form_icon' alt="User Icon" />
           <input
             type="password"
             placeholder="Password"
             required
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            id='pass_input'
           />
+          <img src={`${process.env.PUBLIC_URL}/Assets/passicon.png`} id='pass_form_icon' alt="Password Icon" />
           <a href='http://localhost:3000/forgot_password' id='forgot_pw'>Forgot Password?</a>
           <div className='remember_me'>
             <input
@@ -87,8 +67,7 @@ function LoginComponent() {
         </div>
       </form>
     </div>
-    
   );
-};
+}
 
 export default LoginComponent;

@@ -1,119 +1,251 @@
-.box{
-  
-    width: 50px;
-    height: 100px;
-    background-color: silver;
-    border: solid;
-    margin-left: 3px;
-    position: relative;
-    top: 30px;
-    
+/* Container Styling */
+.clothing-shops-container {
+  font-family: Arial, sans-serif;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  color: #333;
 }
 
-#box_container{
-    display: flex;
-    display: row;
-    width: auto;
-    height: auto;
-    
-    
-    
-
+/* Header */
+.clothing-shops-container h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #444;
+  margin-bottom: 2rem;
 }
 
+/* Shop List */
+.shops-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
 
-.clothes-bin-container {
-    padding: 20px;
-    height: 250px;
-    margin: auto;
-    text-align: center;
-    width: auto;
-   
+/* Shop Card */
+.shop-name {
+  width: 130px;
+  height: 140px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.shop-name h2 {
+  font-size: 1.1rem;
+  margin-top: 0.4rem;
+  color: #333;
+}
+
+.shop-name:hover {
+  background-color: #f3f3f3;
+  transform: translateY(-4px);
+  color: #007BFF;
+}
+
+.shop-logo {
+  width: 100px;
+  height: 60px;
+  margin-bottom: 0.5rem;
+}
+
+/* Shop Details */
+.shop-details {
+  margin-top: 2rem;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.shop-details h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Brand Item */
+.brand-item {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background-color: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+/* Item List */
+.shop-items-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Individual Item Details */
+.item-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.item-details:hover {
+  background-color: #f7f7f7;
+}
+
+.item-details img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.item-details p {
+  font-size: 0.95rem;
+  margin: 0.3rem 0;
+}
+
+/* View More Button */
+#view_more_button {
+  width: 100%;
+  max-width: 120px;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  background-color: lightgreen;
+  color: black;
+  border: none;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: background-color 0.4s;
+}
+
+#view_more_button:hover {
+  background-color: rgb(22, 231, 22);
+}
+
+/* Material Categories */
+.material-categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.material-category {
+  padding: 0.5rem 1rem;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.material-category:hover {
+  background-color: #e0e0e0;
+  transform: scale(1.05);
+}
+
+.material-category.active {
+  background-color: lightgreen;
+  color: #fff;
+  border-color: lightgreen;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .clothing-shops-container h1 {
+    font-size: 2rem;
   }
 
-
-  .clothes-bin-container-1{
-    padding: 20px;
-    height: 250px;
-    margin: auto;
-    text-align: center;
-    width: 200px;
-   
-  }
-  
-  
- 
-  .clothes-list {
-    list-style-type: none;
-    padding: 0;
-    width: auto;
-    height: 200px;
-    display: flex;
-    flex-direction: row;
-
+  .shop-name {
+    width: 100px;
+    height: 120px;
   }
 
-  .products_edit{
-    width: 1200px;
-    height: 400px;
-    display: flex;
-    flex-direction: row;
-  }
-  
-  .clothes-item {
-    position: relative;
-    padding: 7px;
-    margin-left: 10px;
-    border: 1px solid black;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    background-color: #f9f9f9;
-    width: 800px;
-    height: 200px;
+  .shop-logo {
+    width: 80px;
+    height: 50px;
   }
 
-
-  .pagination-controls {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
+  .shop-details h2 {
+    font-size: 1.75rem;
   }
-  
+}
 
-  .pagination-controls button {
-    background-color: lightgreen; 
-    border: 1px solid lightgreen; 
-    color: black;
-    padding: 10px 15px;
-    margin: 0 5px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    font-size: 16px;
+@media (max-width: 768px) {
+  .shop-items-list {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 
-  .pagination-controls button:hover {
-    background-color: #0056b3; 
-    border-color: #0056b3; 
-    transform: scale(1.05); 
+  .clothing-shops-container h1 {
+    font-size: 1.75rem;
   }
-  
-  .pagination-controls button:active {
-    background-color: #00408d; 
-    border-color: #00408d; 
-    transform: scale(0.95); 
-  }
-  
 
-  .pagination-controls button:disabled {
-    background-color: #cccccc; 
-    border-color: #cccccc; 
-    cursor: not-allowed;
+  .shop-details {
+    padding: 1.5rem;
   }
-  
-  .pagination-controls button.current-page {
-    background-color: #0056b3; 
-    color: white;
-    font-weight: bold;
+}
+
+@media (max-width: 480px) {
+  .clothing-shops-container {
+    padding: 1rem;
   }
-  
+
+  .clothing-shops-container h1 {
+    font-size: 1.5rem;
+  }
+
+  .shop-details h2 {
+    font-size: 1.25rem;
+  }
+
+  .shop-items-list {
+    grid-template-columns: 1fr;
+  }
+
+  .item-details {
+    padding: 0.8rem;
+  }
+
+  #view_more_button {
+    font-size: 0.85rem;
+    max-width: 100px;
+  }
+}
+
+/* Dark mode styles */
+body.dark-mode, .container.dark-mode, .page-content.dark-mode {
+  background-color: #282828;
+  color: #f0f0f0;
+}
+
+input.dark-mode, textarea.dark-mode, select.dark-mode {
+  background-color: #333;
+  color: #fff;
+  border-color: #777;
+}
+
+button.dark-mode, .button.dark-mode {
+  background-color: #444;
+  color: #fff;
+}
+
+.link.dark-mode, a.dark-mode {
+  color: #4a90e2;
+}

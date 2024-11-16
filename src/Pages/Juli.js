@@ -1,4 +1,4 @@
-import Juli from '../Components/Juli'
+import RegistBusiness from '../Components/RegisterFormBusiness'
 
 export default function juli(){
 
@@ -6,7 +6,7 @@ export default function juli(){
         <>
         
         
-        <Juli />
+        <RegistBusiness />
         
        
             

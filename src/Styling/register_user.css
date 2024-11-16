@@ -18,23 +18,32 @@
     align-items: center; /* Center inputs */
 }
 
-.register_user input,
-#select_register {
-    width: 100%; /* Full width */
+.register_user input {
+    width: 100%; 
     padding: 10px;
-    height: 40px; /* Consistent height */
+    height: 40px; 
     border-radius: 9px;
-    margin: 10px 0; /* Uniform margin */
+    margin: 10px 0; 
     border: 1px solid silver;
     outline: none;
     position: relative;
-    left: 2px;
-    bottom: 100px;
+    left: -10px;
+    bottom: 80px;
 }
+
+#select_register{
+    position: relative;
+    bottom: 110px;
+    width: 100%;
+    height: 40px;
+    border-radius: 9px;
+    border:  1px solid silver;
+}
+
 
 #regist_b_u{
     position: relative;
-    bottom: 120px;
+    bottom: 115px;
 }
 
 #span_password{
@@ -66,7 +75,7 @@
 #h_register {
     text-align: center;
     position: relative;
-    bottom: 100px;
+    bottom: 110px;
     padding: 10px 0; /* Padding for better spacing */
 }
 
@@ -90,10 +99,47 @@
     bottom: 50px;
 }
 
+#underline_regist{
+    width: 520px;
+    height: 0.5px;
+    background-color: rgb(156, 153, 153);
+    position: relative;
+    bottom: 90px;
+}
+
+#underline_regist1{
+    width: 520px;
+    height: 0.5px;
+    background-color: rgb(156, 153, 153);
+    position: relative;
+    bottom: 120px;
+}
+
 /* Responsive adjustments */
 @media (max-width: 600px) {
     .register_user {
         width: 90%; /* Adjust width on smaller screens */
         margin: 10px; /* Reduce margin for smaller screens */
     }
+}
+
+/* Dark mode styles */
+body.dark-mode, .container.dark-mode, .page-content.dark-mode {
+  background-color: #282828;
+  color: #f0f0f0;
+}
+
+input.dark-mode, textarea.dark-mode, select.dark-mode {
+  background-color: #333;
+  color: #fff;
+  border-color: #777;
+}
+
+button.dark-mode, .button.dark-mode {
+  background-color: #444;
+  color: #fff;
+}
+
+.link.dark-mode, a.dark-mode {
+  color: #4a90e2;
 }

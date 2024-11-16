@@ -1,21 +1,21 @@
 .log_main_div {
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    min-height: 100vh; /* Full height for centering */
+    justify-content: center;    
+    align-items: center;    
+    min-height: 100vh;  
     
 }
 
 .log_user {
-    width: 350px; /* Fixed width */
+    width: 350px;   
     height: 430px;
     padding: 30px;
-    border: 1px solid black; /* Adjusted border */
+    border: 1px solid black;    
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
     background-color: #f9f9f9;
     display: flex;
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items */
+    flex-direction: column;     
+    align-items: center;    
 }
 
 #head_log{
@@ -44,6 +44,12 @@
     top: -100px;
 }
 
+.log_user input[type="password"]
+{
+    position: relative;
+    top: -120px;
+}
+
 .log_user input:focus {
     border: 3px solid lightgreen;
 }
@@ -51,7 +57,7 @@
 #button_log {
     width: 100%;
     height: 100%;
-    margin-top: 10px; /* Margin for spacing */
+    margin-top: 10px; 
     background-color: lightgreen;
     color: white;
     font-weight: bold;
@@ -59,7 +65,7 @@
     border: none;
     border-radius: 9px;
     position: relative;
-    bottom: 90px;
+    bottom: 100px;
 }
 
 #button_log:hover {
@@ -73,7 +79,7 @@
     font-size: 13px;
     margin: 10px 0; 
     position: relative;
-    right: 135px;
+    right: 125px;
     top: -90px;
 }
 
@@ -86,17 +92,17 @@
 
 .remember_me {
     display: flex;
-    align-items: center; /* Center items vertically */
-    margin-top: 10px; /* Margin for spacing */
+    align-items: center;    
+    margin-top: 10px;   
     position: relative;
-    left: 130px;
+    left: 120px;
     bottom: 138px;
 }
 
 .remember_me input {
-    width: 20px; /* Adjusted width */
-    height: 20px; /* Adjusted height */
-    margin-right: 10px; /* Space between checkbox and label */
+    width: 20px;    
+    height: 20px;   
+    margin-right: 10px;     
     position: relative;
     top: -0.3px;
 }
@@ -107,10 +113,46 @@
     font-size: 13px;
 }
 
-/* Responsive adjustments */
+#user_form_icon{
+    position: relative;
+    width: 25px;
+    height: 25px;
+    bottom: 144px;
+    left: 160px;
+}
+
+#pass_form_icon{
+    position: relative;
+    width: 23px;
+    height: 23px;
+    bottom: 160px;
+    left: 160px;
+}
+
 @media (max-width: 400px) {
     .log_user {
-        width: 90%; /* Adjust width on smaller screens */
-        padding: 20px; /* Adjust padding for smaller screens */
+        width: 90%; 
+        padding: 20px; 
     }
+}
+
+/* Dark mode styles */
+body.dark-mode, .container.dark-mode, .page-content.dark-mode {
+  background-color: #282828;
+  color: #f0f0f0;
+}
+
+input.dark-mode, textarea.dark-mode, select.dark-mode {
+  background-color: #333;
+  color: #fff;
+  border-color: #777;
+}
+
+button.dark-mode, .button.dark-mode {
+  background-color: #444;
+  color: #fff;
+}
+
+.link.dark-mode, a.dark-mode {
+  color: #4a90e2;
 }

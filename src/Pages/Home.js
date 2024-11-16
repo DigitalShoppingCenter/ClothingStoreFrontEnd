@@ -1,10 +1,4 @@
 import Navbar from '../Components/Navbar'
-import ComingSoon from '../Components/ComingSoon'
-
-
-
-
-
 
 
 export default function Home(){
@@ -13,12 +7,6 @@ export default function Home(){
         <>
         
         <Navbar /><br></br>
-        <ComingSoon />
-        
-        
-       
-            
-        
         </>
     )
 }
