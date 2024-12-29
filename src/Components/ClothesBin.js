@@ -7,6 +7,9 @@ import 'slick-carousel/slick/slick-theme.css';
 import { useNavigate } from 'react-router-dom';
 
 const ClothingShops = () => {
+
+    
+
     const [selectedShop, setSelectedShop] = useState(null);
     const [selectedMaterial, setSelectedMaterial] = useState(null);
     const navigate = useNavigate();
@@ -17,7 +20,8 @@ const ClothingShops = () => {
 
     const toggleShopSelection = (shopName) => {
         setSelectedShop((prevShop) => (prevShop === shopName ? null : shopName));
-        setSelectedMaterial(null); // Reset material selection when shop is changed
+        setSelectedMaterial(null); 
+        navigate(`/shops/${shopName}`);
     };
 
     const toggleMaterialSelection = (material) => {

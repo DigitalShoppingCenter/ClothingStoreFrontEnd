@@ -3,6 +3,8 @@ function Juli(){
 
 return(
 
+    
+
     <div className='div_madh'>
          <div className='h5'>
         <h5>Kategorite</h5>
@@ -94,9 +96,13 @@ return(
     <button>12</button>
 </div>
     </div>
+    
    
 )
 
+
 }
+
+
 
 export default Juli;

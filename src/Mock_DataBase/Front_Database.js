@@ -1,10 +1,13 @@
 const usersDB = [
-    {
-      id: 1,
-      username: "Envi",
-      password: "1234", 
-      role: "user"
-    },
+  {
+    id: 1,
+    username: "Envi",
+    password: "1234", 
+    role: "user",
+    bio: "Lover of fashion and creativity!",
+    profileImage: ""
+  },
+  
 
     {
         id: 2,

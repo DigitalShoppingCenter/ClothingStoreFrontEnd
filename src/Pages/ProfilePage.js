@@ -1,14 +1,14 @@
 import Navbar from '../Components/Navbar'
-import SearchBar from '../Components/SearchBar'
+import Profile from '../Components/ProfilePage'
 
 
-export default function Home(){
+export default function ProfilePage(){
 
     return(
         <>
         
         <Navbar /><br></br>
-        <SearchBar />
+        <Profile />
         </>
     )
 }

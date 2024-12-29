@@ -46,6 +46,35 @@
     bottom: 115px;
 }
 
+.google-login-button {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: solid 1px lightgray;
+    border-radius: 4px;
+    color: #3c4043;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    height: 40px;
+    padding: 0 12px;
+    transition: background-color 0.2s;
+  }
+  
+  .google-login-button:hover {
+    border: solid 1px darkgrey;
+    background-color: silver;
+    cursor: pointer;
+  }
+  
+  .google-logo {
+    position: relative;
+    top: 1.5px;
+    height: 18px;
+    margin-right: 8px;
+    width: 18px;
+  }
+
 #span_password{
     color: red;
 }

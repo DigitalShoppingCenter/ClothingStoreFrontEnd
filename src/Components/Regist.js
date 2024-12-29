@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../Styling/register_user.css';
 import RegisterFormBusiness from './RegisterFormBusiness'; 
+import { FaGoogle } from "react-icons/fa";
 
 function RegisterFormUser() {
   const [selectedForm, setSelectedForm] = useState('User');
@@ -137,7 +138,10 @@ function RegisterFormUser() {
             Log In
           </a>
         </p>
-        <button id='google-signin'>Sign In with Google</button>
+        <button className="google-login-button">
+          <span alt="Google logo" className="google-logo"><FaGoogle /></span>
+            Sign Up with Google
+          </button> 
       </div>
     </form>
   );

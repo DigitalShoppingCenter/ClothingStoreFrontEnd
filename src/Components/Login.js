@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import '../Styling/log_user.css'; // Make sure the path to the CSS file is correct
 import login from '../Mock_DataBase/Log_function';
+import { useUsers } from '../Context/UserContext';
+import { FaGoogle } from "react-icons/fa";
 
 function LoginComponent() {
   const [username, setUsername] = useState('');
@@ -40,7 +42,7 @@ function LoginComponent() {
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
-          <img src={`${process.env.PUBLIC_URL}/Assets/usericon.png`} id='user_form_icon' alt="User Icon" />
+         
           <input
             type="password"
             placeholder="Password"
@@ -49,7 +51,7 @@ function LoginComponent() {
             onChange={(e) => setPassword(e.target.value)}
             id='pass_input'
           />
-          <img src={`${process.env.PUBLIC_URL}/Assets/passicon.png`} id='pass_form_icon' alt="Password Icon" />
+         
           <a href='http://localhost:3000/forgot_password' id='forgot_pw'>Forgot Password?</a>
           <div className='remember_me'>
             <input
@@ -62,6 +64,10 @@ function LoginComponent() {
           <button type='submit' id='button_log' disabled={loading}>
             {loading ? 'Logging in...' : 'Done'}
           </button>
+          <button className="google-login-button">
+          <span alt="Google logo" className="google-logo"><FaGoogle /></span>
+            Log in with Google
+          </button> 
           {error && <div className="error-message">Error: {error}</div>}
           {success && <div className="success-message">{success}</div>}
         </div>

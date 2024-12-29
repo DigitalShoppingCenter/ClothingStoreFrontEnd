@@ -13,6 +13,7 @@ const allshops = {
                     "fit": "Slim",
                     "price": "$89.99",
                     "mainImage": "Assets/jeans.png",
+                    "brandThumbnail" : "/",
                     "detailImages": [
                         "Assets/jeans.png",
                         "Assets/hoodie.png"
@@ -55,6 +56,7 @@ const allshops = {
                     "fit": "Regular",
                     "price": "$65.00",
                     "mainImage": "Assets/hoodie.png",
+                    "brandThumbnail" : "/",
                     "detailImages": [
                         "",
                         ""

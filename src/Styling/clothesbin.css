@@ -157,15 +157,56 @@
 }
 
 .material-category:hover {
-  background-color: #e0e0e0;
+  background-color: lightgreen;
   transform: scale(1.05);
 }
 
 .material-category.active {
-  background-color: lightgreen;
+  background-color: #1f943a;
   color: #fff;
-  border-color: lightgreen;
+  border-color: #1f943a;
 }
+
+.shop-not-found {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.5rem;
+  color: #666;
+}
+
+.brand-thumbnail {
+  width: auto;
+  height: auto;  /* Larger thumbnails for better visibility */
+  margin: 0 auto 1rem;
+  display: block;
+}
+
+.material-category.active {
+  background-color: #2aa349;
+  color: white;
+  border-color: #1d6f32;
+}
+
+.view-more-button {
+  background-color: #28a745;
+  color: white;
+}
+
+.view-more-button:hover {
+  background-color: #1d6f32;
+}
+
+@media (max-width: 768px) {
+  .shop-name {
+      width: 90%;  /* Full width for better touch targets on mobile */
+      margin: 0 auto;
+  }
+  
+  .brand-thumbnail {
+      height: 150px; /* Adjust size for smaller devices */
+  }
+}
+
 
 /* Responsive Adjustments */
 @media (max-width: 1024px) {

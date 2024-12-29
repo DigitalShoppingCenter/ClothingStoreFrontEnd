@@ -1,117 +1,194 @@
-/* Container for the form */
-.user_update_css {
+:root {
+    --primary-color: #4CAF50;
+    --primary-dark: #45a049;
+    --background-color: #ffffff;
+    --text-color: #666666;
+    --error-color: #1a1f36;
+    --success-color: #4CAF50;
+    --border-color: #e6e6e6;
+    --shadow-color: rgba(0, 0, 0, 0.05);
+    --border-radius: 8px;
+    --transition-duration: 0.2s;
+  }
+  
+
+  .userup-div{
+    left: 5px;
+    width: 500px;
+    height: auto;
+    background-color: #ffffff;
+    position: relative;
+    box-shadow: 0 1px 2px;
+    border: 2px  silver;
+    top: 1px;
+  }
+  
+  /* Container for the form */
+  .user_update_css {
+    position: relative;
+    bottom: 10px;
     max-width: 500px;
     margin: 0 auto;
     padding: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    background-color: #f9f9f9;
-    border-radius: 10px;
+    background-color: var(--background-col);
+    border-radius: var(--border-radius);
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 15px; /* Adds spacing between form elements */
-}
-
-/* Input fields */
-.user_update_css input {
+    gap: 12px;
+  }
+  
+  /* Input fields */
+  .user_update_css input {
     width: 100%;
-    padding: 12px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 1rem;
-    transition: border 0.3s ease;
-}
-
-.user_update_css input::placeholder {
-    color: #888;
-}
-
-.user_update_css input:focus {
-    border: 2px solid lightgreen;
+    height: 48px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    font-size: 14px;
+    color: #1a1f36;
+    background-color: #ffffff;
+    transition: border-color var(--transition-duration) ease;
+    box-sizing: border-box;
+  }
+  
+  .user_update_css input::placeholder {
+    color: #8e8e8e;
+    font-size: 14px;
+  }
+  
+  .user_update_css input:focus {
+    border-color: #8e8e8e;
     outline: none;
-}
+    box-shadow: none;
+  }
+  
+  /* Date input specific styling */
+  .user_update_css input[type="date"] {
+    color: #8e8e8e;
+    position: relative;
+    right: 10px;
+  }
+  
+  .user_update_css input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0.6;
+  }
+  
+  .user_update_css input[type="email"] {
+    color: #8e8e8e;
+    position: relative;
+    right: 10px;
+  }
 
-/* Button styling */
-.user_update_css button {
+  /* Error message styling */
+  .user_update_css .error-message {
+    font-size: 12px;
+    color: #1a1f36;
+    margin-top: 4px;
+    text-align: right;
+  }
+  
+  /* Button styling */
+  .user_update_css button {
     width: 100%;
-    padding: 12px;
-    background-color: lightgreen;
+    height: 48px;
+    padding: 8px 16px;
+    background-color: var(--primary-color);
     color: white;
-    font-size: 1rem;
-    font-weight: bold;
+    font-size: 14px;
+    font-weight: 500;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.user_update_css button:hover {
-    background-color: darkgreen;
-}
-
-.user_update_css button:disabled {
-    background-color: gray;
+    transition: background-color var(--transition-duration) ease;
+  }
+  
+  .user_update_css button:hover {
+    background-color: var(--primary-dark);
+  }
+  
+  .user_update_css button:disabled {
+    background-color: #e6e6e6;
     cursor: not-allowed;
-}
-
-/* Informational text styling */
-.user_update_css p {
+  }
+  
+  /* Informational text styling */
+  .user_update_css p {
     width: 100%;
-    text-align: center;
-    font-size: 0.9rem;
-    color: inherit;
-}
-
-.user_update_css p.error {
-    color: red;
-}
-
-.user_update_css p.success {
-    color: green;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
+    text-align: right;
+    font-size: 12px;
+    color: #1a1f36;
+    margin: 4px 0;
+  }
+  
+  .user_update_css p.error {
+    color: var(--error-color);
+  }
+  
+  .user_update_css p.success {
+    color: var(--success-color);
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
     .user_update_css {
-        padding: 15px;
+      padding: 16px;
     }
-
+    
     .user_update_css input,
     .user_update_css button {
-        font-size: 0.95rem;
-        padding: 10px;
+      height: 44px;
     }
-}
-
-@media (max-width: 480px) {
+  }
+  
+  @media (max-width: 480px) {
     .user_update_css {
-        padding: 10px;
+      padding: 12px;
     }
-
+    
     .user_update_css input,
     .user_update_css button {
-        font-size: 0.85rem;
-        padding: 8px;
+      height: 40px;
+      font-size: 13px;
     }
-}
-
-/* Dark mode styles */
-body.dark-mode, .container.dark-mode, .page-content.dark-mode {
-  background-color: #282828;
-  color: #f0f0f0;
-}
-
-input.dark-mode, textarea.dark-mode, select.dark-mode {
-  background-color: #333;
-  color: #fff;
-  border-color: #777;
-}
-
-button.dark-mode, .button.dark-mode {
-  background-color: #444;
-  color: #fff;
-}
-
-.link.dark-mode, a.dark-mode {
-  color: #4a90e2;
-}
+  }
+  
+  /* Dark mode styles */
+  body.dark-mode,
+  .container.dark-mode,
+  .page-content.dark-mode {
+    --background-color: #1e1e1e;
+    --text-color: #f0f0f0;
+    --border-color: #333333;
+    --shadow-color: rgba(0, 0, 0, 0.2);
+  }
+  
+  .dark-mode .user_update_css {
+    background-color: #2c2c2c;
+  }
+  
+  .dark-mode .user_update_css input {
+    background-color: #333333;
+    color: #f0f0f0;
+    border-color: #444444;
+  }
+  
+  .dark-mode .user_update_css input::placeholder {
+    color: #888888;
+  }
+  
+  .dark-mode .user_update_css button {
+    background-color: var(--primary-color);
+  }
+  
+  .dark-mode .user_update_css button:hover {
+    background-color: var(--primary-dark);
+  }
+  
+  .dark-mode .user_update_css button:disabled {
+    background-color: #444444;
+  }
+  
+  .dark-mode .link,
+  .dark-mode a {
+    color: #64b5f6;
+  }

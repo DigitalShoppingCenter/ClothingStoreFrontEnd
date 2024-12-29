@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import '../Styling/productDetail.css';
+import MyMap from './MyMap';
 
 function ProductDetail() {
   const { state } = useLocation();
@@ -47,6 +48,9 @@ function ProductDetail() {
           <br></br>
           <br></br>
           <div id='seperation-line'></div>
+          <div className='mymap'>
+            <MyMap />
+          </div>
         </div>
       </div>
     </div>

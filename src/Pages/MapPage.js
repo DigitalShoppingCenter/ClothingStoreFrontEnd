@@ -1,14 +1,14 @@
 import Navbar from '../Components/Navbar'
-import SearchBar from '../Components/SearchBar'
+import Map from '../Components/MyMap'
 
 
-export default function Home(){
+export default function MapPage(){
 
     return(
         <>
         
         <Navbar /><br></br>
-        <SearchBar />
+        <Map />
         </>
     )
 }
