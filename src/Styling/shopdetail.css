@@ -1,0 +1,211 @@
+/* General Page Styling */
+.shop-details-page {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Hero Section */
+.shop-hero {
+  height: 200px;
+  box-shadow: 0 3px 5px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.shop-hero-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Shop Logo */
+.shop-logo {
+  position: relative;
+  top: 120px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.shop-info{
+  width: 100%;
+  height: 90%;
+  position: relative;
+  left: 240px;
+}
+
+/* View on Map Button */
+.view-on-map-btn {
+  position: relative;
+  bottom: 165px;
+  left: 530px;
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.view-on-map-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Categories Section */
+.shop-categories-section {
+  margin-bottom: 30px;
+}
+
+.shop-categories {
+  position: relative;
+  top: 35px;
+  display: flex;
+  justify-content: left;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 10px 0;
+}
+
+.category-tag {
+  padding: 8px 12px;
+  background-color: rgb(104, 226, 104);
+  color: #fff;
+  font-weight: bold;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 14px;
+}
+
+.category-tag:hover {
+  background-color: #0056b3;
+}
+
+.category-tag.active {
+  background-color: #28a745;
+}
+
+/* Products Section */
+.shop-products-section {
+  margin-bottom: 30px;
+}
+
+.product-row {
+  position: relative;
+  top: 40px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  align-items: center;
+  padding: 10px 15px;
+  border-bottom: 1px solid #ddd;
+  gap: 10px;
+}
+
+.product-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.product-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.product-name {
+  font-size: 16px;
+  color: #333;
+}
+
+.product-price {
+  font-size: 16px;
+  font-weight: bold;
+  color: #007bff;
+  text-align: center;
+}
+
+.view-product-btn {
+  position: relative;
+  left: 40px;
+  width: 60%;
+  padding: 5px 8px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 14px;
+}
+
+.view-product-btn:hover {
+  background-color: #1e7e34;
+}
+
+.available-products{
+  position: relative;
+  top: 20px;
+}
+
+.view-all-products-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.view-all-products-btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.view-all-products-btn:hover {
+  background-color: #0056b3;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .shop-hero {
+    height: 300px;
+  }
+
+  .product-row {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .product-price,
+  .view-product-btn {
+    margin-top: 10px;
+  }
+
+  .view-on-map-btn {
+    top: 10px;
+    right: 10px;
+  }
+}

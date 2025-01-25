@@ -1,0 +1,152 @@
+:root {
+  --primary-color: #007bff;
+  --primary-dark: #0056b3;
+  --background-color: #ffffff;
+  --text-color: #333;
+  --error-color: #ff4d4f;
+  --success-color: #28a745;
+  --border-color: #ced4da;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --border-radius: 8px;
+  --transition-duration: 0.3s;
+}
+
+/* Main container */
+.user-update-form {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 24px;
+  background-color: var(--background-color);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 12px var(--shadow-color);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Form group styling */
+.user-update-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.user-update-form label {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+/* Input fields */
+.user-update-form input,
+.user-update-form textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  font-size: 16px;
+  color: var(--text-color);
+  background-color: #f9f9fb;
+  transition: border-color var(--transition-duration) ease;
+}
+
+.user-update-form input:focus,
+.user-update-form textarea:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 6px var(--primary-color);
+}
+
+/* Placeholder styling */
+.user-update-form input::placeholder,
+.user-update-form textarea::placeholder {
+  color: #a6a6a6;
+  font-size: 14px;
+}
+
+/* Profile picture preview */
+.profile-picture-preview {
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.profile-picture {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border-color);
+}
+
+/* Button styling */
+.user-update-form button {
+  width: 100%;
+  padding: 12px 20px;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color var(--transition-duration) ease, transform var(--transition-duration) ease;
+}
+
+.user-update-form button:hover {
+  background-color: var(--primary-dark);
+  transform: scale(1.03);
+}
+
+.user-update-form button:disabled {
+  background-color: #e0e0e0;
+  cursor: not-allowed;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .user-update-form {
+      padding: 20px;
+  }
+  .user-update-form input,
+  .user-update-form button {
+      font-size: 14px;
+      padding: 10px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .user-update-form {
+      padding: 16px;
+  }
+  .user-update-form input,
+  .user-update-form button {
+      font-size: 13px;
+      padding: 8px 10px;
+  }
+}
+
+/* Dark mode support */
+body.dark-mode .user-update-form {
+  background-color: #2c2c2c;
+}
+
+body.dark-mode .user-update-form input,
+body.dark-mode .user-update-form textarea {
+  background-color: #444444;
+  color: #f0f0f0;
+  border-color: #555555;
+}
+
+body.dark-mode .user-update-form input::placeholder,
+body.dark-mode .user-update-form textarea::placeholder {
+  color: #888888;
+}
+
+body.dark-mode .user-update-form button {
+  background-color: var(--primary-color);
+}
+
+body.dark-mode .user-update-form button:hover {
+  background-color: var(--primary-dark);
+}
