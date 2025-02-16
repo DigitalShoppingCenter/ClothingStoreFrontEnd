@@ -217,6 +217,159 @@ const MockShops = [
         ],
         available: true,
         stockLeft: 3
+      },
+      // New items added below (itemId: 13 - 22)
+      {
+        itemId: 13,
+        slug: 't-shirt-basic',
+        name: 'Basic T-Shirt',
+        price: 25.0,
+        imageUrl: '/Assets/tshirt.png',
+        category: "Men's Clothing",
+        info: 'Simple and stylish basic t-shirt.',
+        images: [
+          '/Assets/tshirt.png',
+          '/Assets/tshirt_alt1.png',
+          '/Assets/tshirt_alt2.png'
+        ],
+        available: true,
+        stockLeft: 20
+      },
+      {
+        itemId: 14,
+        slug: 'floral-dress',
+        name: 'Floral Dress',
+        price: 65.0,
+        imageUrl: '/Assets/floral-dress.png',
+        category: "Women's Clothing",
+        info: 'Light and breezy floral dress for summer.',
+        images: [
+          '/Assets/floral-dress.png',
+          '/Assets/floral-dress_alt1.png',
+          '/Assets/floral-dress_alt2.png'
+        ],
+        available: true,
+        stockLeft: 10
+      },
+      {
+        itemId: 15,
+        slug: 'beanie',
+        name: 'Beanie',
+        price: 15.0,
+        imageUrl: '/Assets/beanie.png',
+        category: 'Accessories',
+        info: 'Warm beanie to keep you cozy.',
+        images: [
+          '/Assets/beanie.png',
+          '/Assets/beanie_alt1.png'
+        ],
+        available: true,
+        stockLeft: 30
+      },
+      {
+        itemId: 16,
+        slug: 'sneaker',
+        name: 'Sneaker',
+        price: 85.0,
+        imageUrl: '/Assets/sneaker.png',
+        category: "Men's Clothing",
+        info: 'Comfortable everyday sneakers.',
+        images: [
+          '/Assets/sneaker.png',
+          '/Assets/sneaker_alt1.png'
+        ],
+        available: true,
+        stockLeft: 12
+      },
+      {
+        itemId: 17,
+        slug: 'mini-skirt',
+        name: 'Mini Skirt',
+        price: 45.0,
+        imageUrl: '/Assets/mini-skirt.png',
+        category: "Women's Clothing",
+        info: 'Trendy mini skirt for a casual look.',
+        images: [
+          '/Assets/mini-skirt.png',
+          '/Assets/mini-skirt_alt1.png'
+        ],
+        available: true,
+        stockLeft: 18
+      },
+      {
+        itemId: 18,
+        slug: 'scarf',
+        name: 'Scarf',
+        price: 20.0,
+        imageUrl: '/Assets/scarf.png',
+        category: 'Accessories',
+        info: 'Warm and fashionable scarf.',
+        images: [
+          '/Assets/scarf.png',
+          '/Assets/scarf_alt1.png'
+        ],
+        available: true,
+        stockLeft: 25
+      },
+      {
+        itemId: 19,
+        slug: 'hooded-jacket',
+        name: 'Hooded Jacket',
+        price: 95.0,
+        imageUrl: '/Assets/hooded-jacket.png',
+        category: "Men's Clothing",
+        info: 'Stylish hooded jacket for cooler days.',
+        images: [
+          '/Assets/hooded-jacket.png',
+          '/Assets/hooded-jacket_alt1.png'
+        ],
+        available: true,
+        stockLeft: 8
+      },
+      {
+        itemId: 20,
+        slug: 'pencil-skirt',
+        name: 'Pencil Skirt',
+        price: 70.0,
+        imageUrl: '/Assets/pencil-skirt.png',
+        category: "Women's Clothing",
+        info: 'Elegant pencil skirt perfect for work.',
+        images: [
+          '/Assets/pencil-skirt.png',
+          '/Assets/pencil-skirt_alt1.png'
+        ],
+        available: true,
+        stockLeft: 15
+      },
+      {
+        itemId: 21,
+        slug: 'sunglasses',
+        name: 'Sunglasses',
+        price: 40.0,
+        imageUrl: '/Assets/sunglasses.png',
+        category: 'Accessories',
+        info: 'UV protection sunglasses with a modern design.',
+        images: [
+          '/Assets/sunglasses.png',
+          '/Assets/sunglasses_alt1.png'
+        ],
+        available: true,
+        stockLeft: 20
+      },
+      {
+        itemId: 22,
+        slug: 'leather-belt',
+        name: 'Leather Belt',
+        price: 35.0,
+        imageUrl: '/Assets/leather-belt.png',
+        category: 'Accessories',
+        info: 'Genuine leather belt that lasts.',
+        images: [
+          '/Assets/leather-belt.png',
+          '/Assets/leather-belt_alt1.png'
+        ],
+        available: true,
+        stockLeft: 22
       }
     ],
     hours: 'Mon-Sat 10:00-21:00, Sun 12:00-18:00',

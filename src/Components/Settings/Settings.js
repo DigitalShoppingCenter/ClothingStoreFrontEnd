@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { jwtDecode } from "jwt-decode"; // Ensure you have this installed: npm install jwt-decode
+import { jwtDecode } from "jwt-decode";
 import SettingsSidebar from "./SettingsSidebar";
 import SettingsContent from "./SettingsContent";
-import Navbar from "../../Components/Navbar";
-import "../../Styling/settings.css"; // Corrected the import name
+import Navbar from "../Navbar";
+import "../../Styling/settings.css"
 
 const Settings = () => {
   const [selectedCategory, setSelectedCategory] = useState("General");
@@ -12,62 +12,38 @@ const Settings = () => {
   const [userBusinesses, setUserBusinesses] = useState([]);
   const navigate = useNavigate();
 
-  const categories = [
-    "Business",
-    "Clothing Items",
-    "Employee Management",
-    "Notifications",
-    "Audit and Logs",
-    "Preferences",
-    "Edit Profile",
-  ];
-
   useEffect(() => {
     const validateUser = () => {
       try {
         const token = localStorage.getItem("token");
         if (!token) {
-          navigate("/login"); // Redirect to login if no token
+          navigate("/login");
           return;
         }
-
         const decodedToken = jwtDecode(token);
-
-        // Check if the user is an owner
         if (decodedToken.role !== "owner") {
-          navigate("/unauthorized"); // Redirect if not an owner
+          navigate("/unauthorized");
           return;
         }
-
-        // Set user businesses for further validation in SettingsContent
         setUserBusinesses(decodedToken.businesses || []);
-        setIsOwner(true); // Grant access
+        setIsOwner(true);
       } catch (error) {
         console.error("Error validating user:", error);
-        navigate("/login"); // Redirect to login on any error
+        navigate("/login");
       }
     };
-
     validateUser();
   }, [navigate]);
 
-  if (!isOwner) {
-    return <p>Validating access...</p>; // Display a loading message during validation
-  }
-
   return (
-    <div>
-      <Navbar /> <br />
-      <div className="settings-container">
-        <SettingsSidebar
-          categories={categories}
+    <div className="settings-layout">
+      <Navbar />
+      <div className="settings-wrapper">
+        <SettingsSidebar categories={['Business', 'Clothing Items', 'Employee Management', 'Notifications', 'Audit and Logs', 'Preferences', 'Edit Profile']}
           selectedCategory={selectedCategory}
           onSelectCategory={setSelectedCategory}
         />
-        <SettingsContent
-          selectedCategory={selectedCategory}
-          userBusinesses={userBusinesses}
-        />
+        <SettingsContent selectedCategory={selectedCategory} userBusinesses={userBusinesses} />
       </div>
     </div>
   );

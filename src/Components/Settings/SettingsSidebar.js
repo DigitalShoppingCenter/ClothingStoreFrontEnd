@@ -7,7 +7,7 @@ const SettingsSidebar = ({ categories, selectedCategory, onSelectCategory }) => 
         {categories.map((category) => (
           <li
             key={category}
-            className={selectedCategory === category ? "active" : ""}
+            className={`category-item ${selectedCategory === category ? "active" : ""}`}
             onClick={() => onSelectCategory(category)}
           >
             {category}

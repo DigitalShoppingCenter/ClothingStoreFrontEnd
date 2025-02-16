@@ -149,10 +149,7 @@ const ProductDetailsPage = () => {
                     ${item.price.toFixed(2)}
                   </p>
                   <Link
-                    to={`/${shop.slug}/${item.slug}`}
-                    className="view-product-btn"
-                  >
-                    View Product
+                    to={`/${shop.slug}/${item.slug}`}>
                   </Link>
                 </li>
               ))}

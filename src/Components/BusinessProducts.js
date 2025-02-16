@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../Styling/businessproduct.css'
+
 
 export const BusinessProducts = () => {
   const [business, setBusiness] = useState(null);
