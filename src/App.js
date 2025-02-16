@@ -19,7 +19,7 @@ import SettingsContent from './Components/Settings/SettingsContent';
 import Unauthorized from './Pages/Unauthorized';
 import ShopProductsPage from './Pages/ShopProductsPage';
 import ComingSoon from './Pages/ComingSoon';
-import './App.css';
+import UserSettingsPage from './Pages/UserSettings';
 
 export default function App() {
 
@@ -39,11 +39,12 @@ export default function App() {
           <Route path="/map" element={<Map />} />
           <Route path='/shops' element={<ShopList />} />
           <Route path="/:slug" element={<ShopDetailPage />} />
-          <Route path='/:slug/product/:productId' element={<ProductDetailsPage />} /> 
+          <Route path="/:slug/:productSlug" element={<ProductDetailsPage />} />
           <Route path="/create-shop" element={<RegisterBusinessForm />} />
           <Route path="/business/:businessId/settings" element={<SettingsContent />} />
           <Route path="/unauthorized" element={<Unauthorized />} />
           <Route path="/:shopSlug/products" element={<ShopProductsPage />} />
+          <Route path='/profile-settings' element={<UserSettingsPage />} />
 
         </Routes>
       </UserProvider>

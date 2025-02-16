@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { FaSearch, FaMicrophone } from "react-icons/fa";
 import "../Styling/searchbar.css";
 import allshops from "../Mock_DataBase/Mock_Shops"; // Adjust the path to your database file
@@ -68,14 +68,15 @@ const SearchBar = ({ onNavigate }) => {
     setSearchResults([]);
   };
 
+  // UPDATED: Use product slug for navigation for clothing items
   const handleNavigation = (selectedItem) => {
     if (selectedItem.slug) {
       // It's a shop
-      window.location.href = `/shop/${selectedItem.slug}`;
+      window.location.href = `/${selectedItem.slug}`;
     } else if (selectedItem.data) {
       // It's a clothing item
-      const { itemId, shopSlug } = selectedItem.data;
-      window.location.href = `/shop/${shopSlug}/product/${itemId}`;
+      const { slug: productSlug, shopSlug } = selectedItem.data;
+      window.location.href = `/${shopSlug}/${productSlug}`;
     } else {
       console.error("Unknown navigation item:", selectedItem);
     }

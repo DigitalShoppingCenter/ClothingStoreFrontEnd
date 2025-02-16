@@ -1,0 +1,112 @@
+.settings-container {
+  max-width: 600px;
+  height: 830px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Arial', sans-serif;
+}
+
+.settings-container form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-top: 1rem;
+}
+
+.settings-container label {
+  position: relative;
+  bottom: 90px;
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem; /* Using rems for scalability */
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.settings-container input,
+.settings-container textarea {
+  position: relative;
+  top: 5px;
+  padding: 10px;
+  font-size: 1rem; /* Fluid font sizes */
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  resize: none;
+}
+
+.settings-container input[type="text"],
+.settings-container input[type="email"],
+.settings-container input[type="password"] {
+  height: 30px; /* Adjust height for accessibility */
+}
+
+#profile-picture-input{
+  width: 50%;
+}
+
+#label-profile-picture{
+  position: relative;
+  top: 5px;
+}
+
+.word-count{
+  position: relative;
+  top: 7px;
+  text-align: right;
+}
+
+.settings-container textarea {
+  height: 110px;
+}
+
+.settings-container button {
+  position: relative;
+  bottom: 80px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-size: 1rem;
+}
+
+.settings-container button:hover,
+.settings-container button:focus {
+  background-color: #45a049;
+  transform: translateY(-2px);
+  outline: none;
+}
+
+@media (max-width: 768px) {
+  .settings-container {
+    padding: 1rem;
+  }
+
+  .settings-container form {
+    gap: 15px;
+  }
+
+  .settings-container label,
+  .settings-container input,
+  .settings-container textarea,
+  .settings-container button {
+    font-size: 0.875rem; /* Smaller font size for smaller devices */
+  }
+
+  .settings-container input,
+  .settings-container textarea {
+    padding: 8px;
+  }
+
+  .settings-container button {
+    padding: 10px 18px;
+  }
+}

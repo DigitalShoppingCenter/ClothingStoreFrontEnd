@@ -1,6 +1,5 @@
-// ShopProductsPage.js
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import Navbar from '../Components/Navbar';
 import MockShops from '../Mock_DataBase/Mock_Shops';
 import '../Styling/shopproducts.css';
@@ -39,15 +38,17 @@ const ShopProductsPage = () => {
         <h1>Products for {shop.name}</h1>
         <div className="products-grid">
           {shop.clothingItems.map((product) => (
-            <div key={product.itemId} className="product-card">
-              <img
-                src={product.imageUrl}
-                alt={product.name}
-                className="product-image"
-              />
+            <div key={product.itemId} className="product-card-all-products">
+              <Link to={`/${shop.slug}/${product.slug}`}>
+                <img
+                  src={product.imageUrl}
+                  alt={product.name}
+                  className="product-image"
+                />
+              </Link>
               <div className="product-details">
                 <h2>{product.name}</h2>
-                <p>{product.description}</p>
+                <p>{product.description || product.info}</p>
                 <p>
                   <strong>Price:</strong> ${product.price.toFixed(2)}
                 </p>

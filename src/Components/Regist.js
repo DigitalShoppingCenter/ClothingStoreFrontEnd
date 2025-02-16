@@ -110,20 +110,13 @@ function RegisterFormUser() {
         </a>
         <h5 id="h_register">- Establish a New Profile -</h5>
 
-                    <div id='underline_regist1'></div>
+        <div id='underline_regist1'></div>
 
         {/* Select dropdown to choose between User and Business */}
-        <p id="regist_b_u">Please select your registration form!</p>
-        <select value={selectedForm} onChange={handleSelectChange} id="select_register">
-          <option value="User">User</option>
-          <option value="Business">Business</option>
-        </select>
-
-                <div id='underline_regist'></div>
+        <p id="regist_b_u">Please fill the registration form!</p>
 
         {/* Conditionally render the User or Business form */}
         {selectedForm === 'User' && renderUserForm()}
-        {selectedForm === 'Business' && <RegisterFormBusiness />}
 
         <button id="button_register" type="submit" disabled={loading}>
           {loading ? 'Registering...' : 'Done'}

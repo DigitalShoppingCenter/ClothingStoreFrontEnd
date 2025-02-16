@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import MockShops from '../Mock_DataBase/Mock_Shops';
 import '../Styling/shoplist.css';
 import Navbar from '../Components/Navbar';
+import Footer from '../Components/Footer';
 
 const ShopList = () => {
   const carouselRef = useRef(null);
@@ -81,6 +82,7 @@ const ShopList = () => {
         </button>
       </div>
     </div>
+    <Footer />
     </div>
   );
 };

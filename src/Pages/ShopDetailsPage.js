@@ -1,9 +1,10 @@
-// ShopDetailsPage.js
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Navbar from '../Components/Navbar';
-import '../Styling/shopdetail.css';
+import '../Styling/sd-shopdetail.css';
 import MockShops from '../Mock_DataBase/Mock_Shops';
+import ShopInformation from '../Components/ShopInformation';
+import Footer from '../Components/Footer';
 
 const ShopDetailsPage = () => {
   const { slug } = useParams(); // Get shop slug from URL
@@ -14,6 +15,10 @@ const ShopDetailsPage = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  // Pagination state
+  const itemsPerPage = 8;
+  const [currentPage, setCurrentPage] = useState(0);
+
   // Fetch shop details using the slug
   useEffect(() => {
     const fetchShopDetails = () => {
@@ -23,7 +28,7 @@ const ShopDetailsPage = () => {
         setFilteredProducts(foundShop.clothingItems);
         setLoading(false);
       } else {
-        setError('Shop not found');
+        setError('Not found');
         setLoading(false);
       }
     };
@@ -34,13 +39,14 @@ const ShopDetailsPage = () => {
   // Filter products based on selected category
   useEffect(() => {
     if (shop) {
-      setFilteredProducts(
+      const products =
         selectedCategory === 'All'
           ? shop.clothingItems
           : shop.clothingItems.filter(
               (item) => item.category === selectedCategory
-            )
-      );
+            );
+      setFilteredProducts(products);
+      setCurrentPage(0); // Reset to first page on category change
     }
   }, [selectedCategory, shop]);
 
@@ -49,26 +55,40 @@ const ShopDetailsPage = () => {
   }
 
   if (error) {
-    return <p className="error-message">{error}</p>;
+    return <p className="sd-error-message">{error}</p>;
   }
+
+  // Pagination logic: calculate total pages and slice products for current page
+  const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
+  const paginatedProducts = filteredProducts.slice(
+    currentPage * itemsPerPage,
+    (currentPage + 1) * itemsPerPage
+  );
+
+  const handlePageChange = (newPage) => {
+    if (newPage >= 0 && newPage < totalPages) {
+      setCurrentPage(newPage);
+    }
+  };
 
   return (
     <div>
       <Navbar />
-      <div className="shop-details-page">
+      <div className="sd-shop-details-page">
         {/* Hero Section */}
         <div
-          className="shop-hero"
+          className="sd-shop-hero"
           style={{ backgroundImage: `url(${shop.coverImage})` }}
         >
-          <div className="shop-hero-content">
+          <div className="sd-shop-hero-content">
             <img
               src={shop.logoImage}
               alt={`${shop.name} Logo`}
-              className="shop-logo"
+              className="sd-shop-logo"
             />
+            <p className="sd-shop-is-now">Shop is now: {shop.currently}</p>
             <button
-              className="view-on-map-btn"
+              className="sd-view-on-map-btn"
               onClick={() => navigate(`/map?shop=${shop.slug}`)}
             >
               View on Map
@@ -77,10 +97,10 @@ const ShopDetailsPage = () => {
         </div>
 
         {/* Categories Section */}
-        <div className="shop-categories-section">
-          <div className="shop-categories">
+        <div className="sd-shop-categories-section">
+          <div className="sd-shop-categories">
             <span
-              className={`category-tag ${
+              className={`sd-category-tag ${
                 selectedCategory === 'All' ? 'active' : ''
               }`}
               onClick={() => setSelectedCategory('All')}
@@ -90,7 +110,7 @@ const ShopDetailsPage = () => {
             {shop.categories.map((category, index) => (
               <span
                 key={index}
-                className={`category-tag ${
+                className={`sd-category-tag ${
                   selectedCategory === category ? 'active' : ''
                 }`}
                 onClick={() => setSelectedCategory(category)}
@@ -108,22 +128,21 @@ const ShopDetailsPage = () => {
         </div>
 
         {/* Products Section */}
-        <div className="shop-products-section">
-          {filteredProducts.map((item) => (
-            <div key={item.itemId} className="product-card">
+        <div className="sd-products-section">
+          {paginatedProducts.map((item) => (
+            <div key={item.itemId} className="sd-product-card">
               <img
                 src={item.imageUrl}
                 alt={item.name}
-                className="product-image"
+                className="sd-product-image"
               />
-              <div className="product-details">
-                <h3 className="product-name">{item.name}</h3>
-                <p className="product-price">${item.price.toFixed(2)}</p>
+              <div className="sd-product-details">
+                <h3 className="sd-product-name">{item.name}</h3>
+                <p className="sd-product-price">${item.price.toFixed(2)}</p>
+                <p className="sd-product-info">"{item.info}"</p>
                 <button
-                  className="view-product-btn"
-                  onClick={() =>
-                    navigate(`/${shop.slug}/product/${item.itemId}`)
-                  }
+                  className="sd-view-product-btn"
+                  onClick={() => navigate(`/${shop.slug}/${item.slug}`)}
                 >
                   View Product
                 </button>
@@ -132,15 +151,51 @@ const ShopDetailsPage = () => {
           ))}
         </div>
 
-        <div className="view-all-products-container">
+        {/* Pagination Controls */}
+        {totalPages > 1 && (
+          <div className="sd-pagination-controls">
             <button
-              className="view-all-products-btn"
-              onClick={() => navigate(`/${shop.slug}/products`)}
-                >
-                  View All Products
-               </button>
+              onClick={() => handlePageChange(currentPage - 1)}
+              disabled={currentPage === 0}
+              className="sd-pagination-arrow"
+            >
+              &lt;
+            </button>
+            {Array.from({ length: totalPages }).map((_, index) => (
+              <button
+                key={index}
+                className={`sd-page-button ${
+                  index === currentPage ? 'active' : ''
+                }`}
+                onClick={() => handlePageChange(index)}
+              >
+                {index + 1}
+              </button>
+            ))}
+            <button
+              onClick={() => handlePageChange(currentPage + 1)}
+              disabled={currentPage === totalPages - 1}
+              className="sd-pagination-arrow"
+            >
+              &gt;
+            </button>
+          </div>
+        )}
+
+        <div>
+          <ShopInformation businessId={1} />
+        </div>
+
+        <div className="sd-view-all-products-container">
+          <button
+            className="sd-view-all-products-btn"
+            onClick={() => navigate(`/${shop.slug}/products`)}
+          >
+            View All Products
+          </button>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

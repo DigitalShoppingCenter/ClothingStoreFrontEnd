@@ -1,108 +1,114 @@
+/* Modernized Settings Layout CSS */
+
 .settings-container {
-    display: flex;
-    height: 100vh;
-    background-color: #f5f5f5;
-    font-family: Arial, sans-serif;
-  }
-  
-  .settings-sidebar {
-    width: 250px;
-    background-color: #2a3f54;
-    color: white;
-    padding: 20px;
-    flex-shrink: 0;
-  }
-  
-  .settings-sidebar ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .settings-sidebar li {
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 4px;
-    margin-bottom: 8px;
-    transition: background 0.3s;
-  }
-  
-  .settings-sidebar li:hover {
-    background-color: #1d2b38;
-  }
-  
-  .settings-sidebar .active {
-    background-color: #1d8cf8;
-    font-weight: bold;
-  }
-  
-  .settings-content {
-    flex: 1;
-    padding: 20px;
-    background-color: white;
-    border-left: 1px solid #ddd;
+  display: flex;
+  height: 100vh;
+  background-color: #f5f5f5;
+  font-family: 'Arial', sans-serif;
+}
+
+.settings-sidebar {
+  width: 250px;
+  background-color: #2a3f54;
+  color: white;
+  padding: 20px;
+  flex-shrink: 0;
+  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.25);
+}
+
+.settings-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.settings-sidebar li {
+  padding: 12px 20px;
+  cursor: pointer;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.settings-sidebar li:hover,
+.settings-sidebar li:focus {
+  background-color: #1d2b38;
+  transform: scale(1.05);
+  outline: none;
+}
+
+.settings-sidebar .active {
+  background-color: #1a84d6;
+  font-weight: bold;
+  color: white;
+  transform: scale(1.1);
+}
+
+.settings-sidebar ul .sub-category {
+  padding-left: 40px;
+  font-size: 14px;
+  color: #a8bbd4;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.settings-sidebar ul .sub-category:hover,
+.settings-sidebar ul .sub-category:focus {
+  background-color: #1d2b38;
+  color: white;
+}
+
+.settings-sidebar ul .sub-category.active {
+  background-color: #1a84d6;
+  font-weight: bold;
+}
+
+.settings-content {
+  flex: 1;
+  padding: 25px;
+  background-color: white;
+  border-left: 2px solid #ccc;
+  overflow-y: auto;
+}
+
+.settings-content > div {
+  margin: 25px 0;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Design Adjustments for Mobile Devices */
+@media (max-width: 600px) {
+  .settings-container {
+    flex-direction: column;
     overflow-y: auto;
   }
-  
+
+  .settings-sidebar {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .settings-sidebar li {
+    padding: 10px;
+    font-size: 15px;
+    margin-bottom: 6px; /* Closer spacing */
+  }
+
+  .settings-content {
+    padding: 20px;
+    border-left: none;
+    border-top: 2px solid #ccc;
+  }
+
   .settings-content > div {
-    position: relative;
-    bottom: 40px;
     margin: 20px 0;
     padding: 15px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    font-size: 14px; /* Smaller font size for compact display */
   }
-  
-  .settings-sidebar ul .sub-category {
-    padding: 8px 30px; /* Indent for subcategories */
-    font-size: 14px;
-    color: #b0c4de; /* Lighter color for subcategories */
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-  
-  .settings-sidebar ul .sub-category:hover {
-    background-color: #1d2b38;
-  }
-  
-  .settings-sidebar ul .sub-category.active {
-    background-color: #1d8cf8;
-    font-weight: bold;
-    color: white;
-  }
-  
-
-  /* Responsive Design */
-  
-  /* For phones */
-  @media (max-width: 480px) {
-    .settings-container {
-      flex-direction: row; /* Keep sidebar on the left and content on the right */
-      height: 100vh; /* Maintain full-screen height */
-    }
-  
-    .settings-sidebar {
-      width: 120px; /* Fixed width for sidebar */
-      padding: 15px;
-    }
-  
-    .settings-sidebar ul {
-      display: block; /* Keep items stacked vertically */
-    }
-  
-    .settings-sidebar li {
-      padding: 10px; /* Adjust padding for smaller screens */
-      font-size: 14px; /* Adjust font size for readability */
-    }
-  
-    .settings-content {
-      padding: 15px; /* Slightly smaller padding for smaller screens */
-    }
-  
-    .settings-content > div {
-      margin: 15px 0; /* Adjust spacing for smaller screens */
-      padding: 10px; /* Compact padding for better fit */
-      font-size: 14px; /* Adjust font size */
-    }
-  }
-  
+}
