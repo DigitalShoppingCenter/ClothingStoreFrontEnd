@@ -5,6 +5,7 @@ import Navbar from '../Components/Navbar';
 import '../Styling/sd-shopdetail.css';
 import MockShops from '../Mock_DataBase/Mock_Shops';
 import ShopInformation from '../Components/ShopInformation';
+import ShopMap from '../Components/ShopMap';
 import Footer from '../Components/Footer';
 
 const ShopDetailsPage = () => {
@@ -18,7 +19,7 @@ const ShopDetailsPage = () => {
   const [error, setError] = useState(null);
 
   // Number of items to display per load
-  const itemsPerLoad = 6;
+  const itemsPerLoad = 8;
 
   // Fetch shop details based on slug
   useEffect(() => {
@@ -26,7 +27,7 @@ const ShopDetailsPage = () => {
     if (foundShop) {
       setShop(foundShop);
       setFilteredProducts(foundShop.clothingItems);
-      setVisibleCount(itemsPerLoad); // load 6 items initially
+      setVisibleCount(itemsPerLoad); // load initial items
       setLoading(false);
     } else {
       setError('Not found');
@@ -44,13 +45,12 @@ const ShopDetailsPage = () => {
               (item) => item.category === selectedCategory
             );
       setFilteredProducts(products);
-      setVisibleCount(itemsPerLoad); // reset to initial 6 on category change
+      setVisibleCount(itemsPerLoad); // reset to initial items on category change
     }
   }, [selectedCategory, shop]);
 
   // Function to load more items when scrolled
   const fetchMoreData = () => {
-    console.log('fetchMoreData called');
     setVisibleCount((prev) =>
       Math.min(prev + itemsPerLoad, filteredProducts.length)
     );
@@ -83,12 +83,6 @@ const ShopDetailsPage = () => {
               className="sd-shop-logo"
             />
             <p className="sd-shop-is-now">Shop is now: {shop.currently}</p>
-            <button
-              className="sd-view-on-map-btn"
-              onClick={() => navigate(`/map?shop=${shop.slug}`)}
-            >
-              View on Map
-            </button>
           </div>
         </div>
 
@@ -118,7 +112,7 @@ const ShopDetailsPage = () => {
         {/* Scrollable container for infinite scroll */}
         <div
           id="scrollableDiv"
-          style={{ height: '80vh', overflow: 'auto', padding: '0 16px' }}
+          style={{ height: '80vh', overflow: 'auto', padding: '0 16px', }}
         >
           <InfiniteScroll
             dataLength={visibleProducts.length}
@@ -154,6 +148,9 @@ const ShopDetailsPage = () => {
 
         <div>
           <ShopInformation businessId={1} />
+        </div>
+        <div className="shopmap">
+          <ShopMap lat={shop.latitude} lng={shop.longitude} />
         </div>
 
         <div className="sd-view-all-products-container">

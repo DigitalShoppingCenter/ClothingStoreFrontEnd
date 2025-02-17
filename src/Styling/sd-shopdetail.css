@@ -34,7 +34,7 @@
 /* Shop Logo */
 .sd-shop-logo {
   position: relative;
-  top: 155px;
+  top: 130px;
   width: 120px;
   height: 120px;
   border-radius: 50%;
@@ -43,28 +43,10 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* View on Map Button */
-.sd-view-on-map-btn {
-  position: relative;
-  bottom: 204px;
-  left: 540px;
-  padding: 10px 12px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.sd-view-on-map-btn:hover {
-  background-color: #0056b3;
-}
-
 .sd-shop-is-now {
   position: relative;
-  bottom: 145px;
-  left: 410px;
+  bottom: 165px;
+  left: 520px;
   padding: 8px 12px;
   background-color: #007bff;
   color: #fff;
@@ -75,6 +57,12 @@
 
 .sd-shop-is-now:hover {
   background-color: #0056b3;
+}
+
+/* Map Of the Shop inside shopdetail */
+
+.shopmap{
+  position: relative;
 }
 
 /* Categories Section */
@@ -184,6 +172,14 @@
   color: black;
   text-align: center;
 }
+
+.shopmap{
+  height: 50px;
+  position: relative;
+  left: 720px;
+  bottom: 200px;
+}
+
 
 /* View Product Button */
 .sd-view-product-btn {
