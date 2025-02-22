@@ -3,7 +3,7 @@ const usersDB = [
     id: 1,
     username: "Envi",
     password: "1234", 
-    role: "owner",
+    role: "Founder",
     bio: "Lover of fashion and creativity!",
     profileImage: "/path/to/envi.jpg",
     email: "envi@example.com",

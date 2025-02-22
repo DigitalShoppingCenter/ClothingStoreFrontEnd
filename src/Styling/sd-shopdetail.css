@@ -65,22 +65,29 @@
   position: relative;
 }
 
-/* Categories Section */
-.sd-shop-categories-section {
-  margin-bottom: 30px;
-}
 
-.sd-shop-categories {
+.sd-shop-categories-section {
   position: relative;
   top: 25px;
-  display: flex;
-  justify-content: left;
-  gap: 10px;
-  flex-wrap: wrap;
-  padding: 10px 0;
+  margin-bottom: 15px;
+  padding: 10px 20px;    
+  border-radius: 6px;      
+  overflow-x: auto;        
+  white-space: nowrap;   
 }
 
+/* Flex container for categories */
+.sd-shop-categories {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;   
+  padding: 0;  
+}
+
+/* Individual category tags */
 .sd-category-tag {
+  display: inline-block;
   padding: 8px 12px;
   background-color: rgb(104, 226, 104);
   color: #fff;
@@ -89,15 +96,17 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
   font-size: 14px;
+  white-space: nowrap; /* Ensure the text doesn't wrap to a second line */
 }
 
 .sd-category-tag:hover {
-  background-color: #0056b3;
+  background-color: #0056b3; /* Hover color */
 }
 
 .sd-category-tag.active {
-  background-color: #28a745;
+  background-color: #28a745; /* Active color */
 }
+
 
 /* Product Row (if used) */
 .sd-product-row {
@@ -115,10 +124,10 @@
 .sd-product-card {
   position: relative;
   padding: 10px;
-  top: 5px;
+  top: 10px;
   display: flex; /* Flexbox to align children horizontally */
   align-items: center; /* Center vertically */
-  width: 55%; /* Full width for a wider card */
+  width: 96%; /* Full width for a wider card */
   height: 80px; /* Thinner card */
   background-color: #f9f9f9;
   border: 1px solid lightgray;
@@ -215,6 +224,8 @@
 }
 
 .sd-view-all-products-btn {
+  position: relative;
+  bottom: 10px;
   padding: 10px 20px;
   background-color: rgb(115, 236, 115);
   color: #fff;

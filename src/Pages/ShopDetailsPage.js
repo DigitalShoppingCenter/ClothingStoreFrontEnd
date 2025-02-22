@@ -86,7 +86,7 @@ const ShopDetailsPage = () => {
           </div>
         </div>
 
-        {/* Categories Section */}
+                {/* Categories Section */}
         <div className="sd-shop-categories-section">
           <div className="sd-shop-categories">
             <span
@@ -109,10 +109,11 @@ const ShopDetailsPage = () => {
           </div>
         </div>
 
+
         {/* Scrollable container for infinite scroll */}
         <div
           id="scrollableDiv"
-          style={{ height: '80vh', overflow: 'auto', padding: '0 16px', }}
+          style={{ height: '80vh', overflow: 'auto', padding: '0 16px', marginRight: '487px' }}
         >
           <InfiniteScroll
             dataLength={visibleProducts.length}
@@ -152,6 +153,8 @@ const ShopDetailsPage = () => {
         <div className="shopmap">
           <ShopMap lat={shop.latitude} lng={shop.longitude} />
         </div>
+
+                <p style={{position: "relative" , left: "15px", height: "0px"}}>All items shown on this page are physically available at the shop.</p>
 
         <div className="sd-view-all-products-container">
           <button
