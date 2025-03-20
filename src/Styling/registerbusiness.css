@@ -1,0 +1,40 @@
+.register-business-form-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+}
+
+.register-business-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.register-business-form input[type="text"],
+.register-business-form textarea,
+.register-business-form input[type="file"] {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.register-business-form .submit-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.register-business-form .submit-button:hover {
+  background-color: #45a049;
+}
+
+.register-business-form textarea {
+  resize: vertical;
+}
